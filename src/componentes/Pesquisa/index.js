@@ -22,10 +22,27 @@ const Subtitulo = styled.h3`
         font-weight: 500;
         margin-bottom: 40px;
    `
+const Resultado = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    p {
+        width: 300px;
+        
+    }
+    img {
+        width: 100px;
+    }
+    &:hover {
+        border: 1px solid white;
+    }
+`
 
 function Pesquisa() {
     const [LivrosPesquisados, setLivrosPesquisados] = useState([])
-    console.log(LivrosPesquisados)
+
     return (
 
         <PesquisaContainer>
@@ -38,7 +55,17 @@ function Pesquisa() {
                     setLivrosPesquisados(resultadoPesquisa)
                 }}
             />
-            
+            {LivrosPesquisados.map(livorsDaPesquisa => (
+                <Resultado>
+
+                    <img src={livorsDaPesquisa.src} />
+                    <p>{livorsDaPesquisa.nome}</p>
+
+                </Resultado>
+            ))}
+
+
+
         </PesquisaContainer>
 
 
