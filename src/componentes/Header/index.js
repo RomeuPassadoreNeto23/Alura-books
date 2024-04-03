@@ -1,5 +1,5 @@
 import IconesHeader from '../IconesHeader'
-import OpcoesHeader from '../opcoesHeader'
+import OpcoesHeader from '../OpcoesHeader'
 import styled from 'styled-components'
 import Logo from '../Logo'
 function Header() {
