@@ -1,6 +1,8 @@
 import { livors } from "./dadosUltimosLancamento"
 import styled from "styled-components"
 import { Titulo } from "../Titulo"
+import CardRecomenda from "../CardRecomenda"
+import imagemLivor from "../../imagens/livro2.png"
 const UltimosLancamentoContainer = styled.section`
     background-color: #EBECEE;
     padding-bottom: 20px;
@@ -29,6 +31,11 @@ function UltimosLancamento() {
                     <img src={livor.src} />
                 ))}
             </NovosLivorContainer>
+            <CardRecomenda 
+             titulo="Talvez você se interesse por..."
+             subtitulo="Angular 11"
+             descricao="Construindo uma aplicação com a  plataforma Google"
+             img={imagemLivor} />
         </UltimosLancamentoContainer>
 
     )
