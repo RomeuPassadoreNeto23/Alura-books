@@ -47,14 +47,13 @@ function Pesquisa() {
 
     useEffect(() => {
         fetchLivros()
-       
+
 
     }, [])
 
     async function fetchLivros() {
-        
-        const LivrosDaAPI =  await  getLivros()
-        console.log(LivrosDaAPI,"livros")
+
+        const LivrosDaAPI = await getLivros()
         setLivros(LivrosDaAPI)
 
 
@@ -71,14 +70,15 @@ function Pesquisa() {
                     setLivrosPesquisados(resultadoPesquisa)
                 }}
             />
-            {LivrosPesquisados.map(livorsDaPesquisa => (
-                <Resultado>
+            {LivrosPesquisados.length ==! 0 ? LivrosPesquisados.map(livorsDaPesquisa => (
+                <Resultado key={livorsDaPesquisa.id}>
 
-                    <img src={livorsDaPesquisa.src} />
+                    <img src={livorsDaPesquisa.img} />
                     <p>{livorsDaPesquisa.nome}</p>
 
                 </Resultado>
-            ))}
+            )) : null
+             }
 
 
 
